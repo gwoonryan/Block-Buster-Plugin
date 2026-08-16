@@ -1,4 +1,4 @@
-package net.gwoonryan.blockbuster.event;
+package net.gwoonryan.blockbuster.events;
 
 import net.gwoonryan.blockbuster.game.item.CustomItemView;
 import net.gwoonryan.blockbuster.game.item.ItemManager;
@@ -10,7 +10,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.EquipmentSlot;
 
-public class Events implements Listener {
+public class ItemEvents implements Listener {
 
     @EventHandler
     public void onInteract(PlayerInteractEvent event) {

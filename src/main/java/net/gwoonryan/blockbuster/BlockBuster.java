@@ -1,8 +1,8 @@
 package net.gwoonryan.blockbuster;
 
-import lombok.Getter;
 import net.gwoonryan.blockbuster.commands.api.CommandManager;
-import net.gwoonryan.blockbuster.event.Events;
+import net.gwoonryan.blockbuster.events.ItemEvents;
+import net.gwoonryan.blockbuster.events.ServerEvents;
 import net.gwoonryan.blockbuster.game.item.ItemManager;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -24,7 +24,8 @@ public final class BlockBuster extends JavaPlugin {
         getLogger().info("Starting BlockBuster");
         ItemManager.init();
         CommandManager.init();
-        Bukkit.getPluginManager().registerEvents(new Events(), this);
+        Bukkit.getPluginManager().registerEvents(new ServerEvents(), this);
+        Bukkit.getPluginManager().registerEvents(new ItemEvents(), this);
     }
 
     @Override

@@ -5,8 +5,10 @@ import net.gwoonryan.blockbuster.BlockBuster;
 import net.kyori.adventure.text.format.NamedTextColor;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.Location;
 import org.bukkit.Sound;
 import org.bukkit.entity.Player;
+import org.bukkit.util.Vector;
 
 import java.util.UUID;
 
@@ -19,6 +21,13 @@ public class BBPlayer {
 
     public Player getBukkitPlayer(){
         return Bukkit.getPlayer(uuid);
+    }
+
+    public void unloadPlayer(){}
+
+    public void sendToSpawn(){
+        getBukkitPlayer().teleport(new Location(Bukkit.getWorld("world"), 0.5, -9, 0.5, 0L, 0L));
+        getBukkitPlayer().setVelocity(new Vector(0.0, 0.0, 0.0));
     }
 
     public boolean isAdmin(){
