@@ -1,9 +1,16 @@
 package net.gwoonryan.blockbuster.game.item;
 
+import net.gwoonryan.blockbuster.game.item.components.LoreComponent;
+import net.gwoonryan.blockbuster.game.item.context.LoreContext;
+import net.kyori.adventure.text.Component;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.persistence.PersistentDataContainer;
 import org.bukkit.persistence.PersistentDataType;
+
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
 
 public final class ItemStackFactory {
 
@@ -43,13 +50,31 @@ public final class ItemStackFactory {
 
         // Visual data
         if (definition.getDisplayName() != null) {
-            meta.setDisplayName(definition.getDisplayName());
+            meta.setDisplayName("§r"+definition.getDisplayName());
         }
 
-//        if (definition.lore() != null
-//                && !definition.lore().isEmpty()) {
-//            meta.setLore(definition.lore());
-//        }
+        ArrayList<LoreComponent> components = new ArrayList<>(definition.allComponentsOfType(LoreComponent.class));
+        components.sort(Comparator.comparingInt(component -> component.loreSection().order()));
+
+        List<Component> lore = new ArrayList<>();
+
+        LoreContext context = new LoreContext(definition);
+
+        for (LoreComponent component : components) {
+            List<Component> lines = component.getLore(context);
+
+            if (lines.isEmpty()) {
+                continue;
+            }
+
+//            if (!lore.isEmpty()) {
+//                lore.add("");
+//            }
+
+            lore.addAll(lines);
+        }
+
+        meta.lore(lore);
 
         // Custom item identity
         PersistentDataContainer pdc =

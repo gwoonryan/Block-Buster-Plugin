@@ -6,6 +6,7 @@ import net.gwoonryan.blockbuster.events.ServerEvents;
 import net.gwoonryan.blockbuster.game.item.ItemManager;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.bukkit.scheduler.BukkitRunnable;
 
 import java.util.logging.Logger;
 
@@ -26,6 +27,7 @@ public final class BlockBuster extends JavaPlugin {
         CommandManager.init();
         Bukkit.getPluginManager().registerEvents(new ServerEvents(), this);
         Bukkit.getPluginManager().registerEvents(new ItemEvents(), this);
+        autoReload();
     }
 
     @Override
@@ -36,5 +38,18 @@ public final class BlockBuster extends JavaPlugin {
 
     public static BlockBuster getPlugin() {
         return instance;
+    }
+
+    private void autoReload(){
+        final long lastModified = getFile().lastModified();
+
+        new BukkitRunnable() {
+            public void run() {
+                if (getFile().lastModified() > lastModified) {
+                    cancel();
+                    Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "plugman reload Block-Buster");
+                }
+            }
+        }.runTaskTimer(this, 0, 20);
     }
 }

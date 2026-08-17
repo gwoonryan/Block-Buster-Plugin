@@ -4,6 +4,7 @@ import lombok.Getter;
 import net.gwoonryan.blockbuster.game.item.components.ItemComponent;
 import org.bukkit.inventory.ItemStack;
 
+import java.util.List;
 import java.util.Optional;
 
 public final class CustomItemView {
@@ -18,7 +19,11 @@ public final class CustomItemView {
         this.definition = definition;
     }
 
-    public <T extends ItemComponent> Optional<T> component(Class<T> type) {
-        return definition.component(type);
+    public <T extends ItemComponent> Optional<T> firstComponentOfType(Class<T> type) {
+        return definition.firstComponentOfType(type);
+    }
+
+    public <T extends ItemComponent> List<T> allComponentsOfType(Class<T> type) {
+        return definition.allComponentsOfType(type);
     }
 }

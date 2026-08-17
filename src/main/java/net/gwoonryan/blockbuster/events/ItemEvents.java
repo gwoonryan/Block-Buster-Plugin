@@ -23,7 +23,7 @@ public class ItemEvents implements Listener {
         if (item == null)
             return;
 
-        item.component(UseComponent.class)
+        item.firstComponentOfType(UseComponent.class)
                 .ifPresent(component -> component.onUse(
                         new ItemUseContext(
                                 PlayerManager.getPlayer(event.getPlayer()),

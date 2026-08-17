@@ -19,7 +19,7 @@ public class ItemBuilder {
                 Material.IRON_SWORD,
                 "Steel Sword",
                 List.of(
-                    new MeleeWeaponComponent(4)
+                    new MeleeWeaponComponent(4, 1.2)
                 )
         ));
     }

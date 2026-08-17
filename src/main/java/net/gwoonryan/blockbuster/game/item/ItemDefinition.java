@@ -2,6 +2,7 @@ package net.gwoonryan.blockbuster.game.item;
 
 import lombok.Getter;
 import net.gwoonryan.blockbuster.game.item.components.ItemComponent;
+import net.gwoonryan.blockbuster.game.item.components.LoreComponent;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 
@@ -25,10 +26,17 @@ public final class ItemDefinition {
         this.displayName = displayName;
     }
 
-    public <T extends ItemComponent> Optional<T> component(Class<T> type) {
+    public <T extends ItemComponent> Optional<T> firstComponentOfType(Class<T> type) {
         return components.stream()
                 .filter(type::isInstance)
                 .map(type::cast)
                 .findFirst();
+    }
+
+    public <T extends ItemComponent> List<T> allComponentsOfType(Class<T> type) {
+        return components.stream()
+                .filter(type::isInstance)
+                .map(type::cast)
+                .toList();
     }
 }
