@@ -1,4 +1,4 @@
-package net.gwoonryan.blockbuster.game.item;
+package net.gwoonryan.blockbuster.game.item.api;
 
 public enum LoreSection {
 

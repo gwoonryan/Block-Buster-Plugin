@@ -1,6 +1,6 @@
-package net.gwoonryan.blockbuster.game.item.context;
+package net.gwoonryan.blockbuster.game.item.api.context;
 
-import net.gwoonryan.blockbuster.game.item.CustomItemView;
+import net.gwoonryan.blockbuster.game.item.api.CustomItemView;
 import net.gwoonryan.blockbuster.game.player.BBPlayer;
 import org.bukkit.event.block.Action;
 

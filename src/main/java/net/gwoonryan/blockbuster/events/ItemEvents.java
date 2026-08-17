@@ -1,9 +1,9 @@
 package net.gwoonryan.blockbuster.events;
 
-import net.gwoonryan.blockbuster.game.item.CustomItemView;
-import net.gwoonryan.blockbuster.game.item.ItemManager;
-import net.gwoonryan.blockbuster.game.item.components.UseComponent;
-import net.gwoonryan.blockbuster.game.item.context.ItemUseContext;
+import net.gwoonryan.blockbuster.game.item.api.CustomItemView;
+import net.gwoonryan.blockbuster.game.item.api.ItemManager;
+import net.gwoonryan.blockbuster.game.item.api.components.UseComponent;
+import net.gwoonryan.blockbuster.game.item.api.context.ItemUseContext;
 import net.gwoonryan.blockbuster.game.player.PlayerManager;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;

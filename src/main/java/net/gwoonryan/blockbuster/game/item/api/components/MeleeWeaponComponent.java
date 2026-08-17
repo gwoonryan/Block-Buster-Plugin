@@ -1,7 +1,7 @@
-package net.gwoonryan.blockbuster.game.item.components;
+package net.gwoonryan.blockbuster.game.item.api.components;
 
-import net.gwoonryan.blockbuster.game.item.LoreSection;
-import net.gwoonryan.blockbuster.game.item.context.LoreContext;
+import net.gwoonryan.blockbuster.game.item.api.LoreSection;
+import net.gwoonryan.blockbuster.game.item.api.context.LoreContext;
 import net.kyori.adventure.text.Component;
 
 import java.util.List;
@@ -9,7 +9,7 @@ import java.util.List;
 public record MeleeWeaponComponent(
         double damage,
         double attackSpeed
-) implements ItemComponent, LoreComponent {
+) implements net.gwoonryan.blockbuster.game.item.api.components.ItemComponent, net.gwoonryan.blockbuster.game.item.api.components.LoreComponent {
 
     @Override
     public LoreSection loreSection() {

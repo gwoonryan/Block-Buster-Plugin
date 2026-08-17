@@ -1,7 +1,9 @@
-package net.gwoonryan.blockbuster.game.item;
+package net.gwoonryan.blockbuster.game.item.api;
 
 import lombok.Getter;
 import net.gwoonryan.blockbuster.BlockBuster;
+import net.gwoonryan.blockbuster.game.item.implementation.ItemBuilder;
+import net.gwoonryan.blockbuster.game.item.implementation.Weapons;
 import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
@@ -16,7 +18,7 @@ public class ItemManager {
 
     public static void init(){
         BlockBuster.logger.info("Registering Items");
-        ItemBuilder.build();
+        ItemBuilder.init();
     }
 
     public static void registerItem(ItemDefinition item) {

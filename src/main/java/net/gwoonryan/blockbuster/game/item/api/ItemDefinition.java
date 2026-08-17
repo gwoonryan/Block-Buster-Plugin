@@ -1,8 +1,7 @@
-package net.gwoonryan.blockbuster.game.item;
+package net.gwoonryan.blockbuster.game.item.api;
 
 import lombok.Getter;
-import net.gwoonryan.blockbuster.game.item.components.ItemComponent;
-import net.gwoonryan.blockbuster.game.item.components.LoreComponent;
+import net.gwoonryan.blockbuster.game.item.api.components.ItemComponent;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 

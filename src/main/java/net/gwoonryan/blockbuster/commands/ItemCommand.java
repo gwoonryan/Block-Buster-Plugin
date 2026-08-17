@@ -1,9 +1,9 @@
 package net.gwoonryan.blockbuster.commands;
 
 import net.gwoonryan.blockbuster.commands.api.AdminCommand;
-import net.gwoonryan.blockbuster.game.item.ItemDefinition;
-import net.gwoonryan.blockbuster.game.item.ItemManager;
-import net.gwoonryan.blockbuster.game.item.ItemStackFactory;
+import net.gwoonryan.blockbuster.game.item.api.ItemDefinition;
+import net.gwoonryan.blockbuster.game.item.api.ItemManager;
+import net.gwoonryan.blockbuster.game.item.api.ItemStackFactory;
 import net.gwoonryan.blockbuster.game.player.BBPlayer;
 import org.bukkit.NamespacedKey;
 import org.bukkit.entity.Player;

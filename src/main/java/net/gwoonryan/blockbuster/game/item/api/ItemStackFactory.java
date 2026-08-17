@@ -1,7 +1,7 @@
-package net.gwoonryan.blockbuster.game.item;
+package net.gwoonryan.blockbuster.game.item.api;
 
-import net.gwoonryan.blockbuster.game.item.components.LoreComponent;
-import net.gwoonryan.blockbuster.game.item.context.LoreContext;
+import net.gwoonryan.blockbuster.game.item.api.components.LoreComponent;
+import net.gwoonryan.blockbuster.game.item.api.context.LoreContext;
 import net.kyori.adventure.text.Component;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
