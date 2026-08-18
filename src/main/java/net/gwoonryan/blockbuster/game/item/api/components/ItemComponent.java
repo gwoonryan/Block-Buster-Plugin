@@ -1,4 +1,6 @@
 package net.gwoonryan.blockbuster.game.item.api.components;
 
-public interface ItemComponent {
+import net.gwoonryan.blockbuster.game.componentObjects.GeneralComponent;
+
+public interface ItemComponent extends GeneralComponent {
 }
