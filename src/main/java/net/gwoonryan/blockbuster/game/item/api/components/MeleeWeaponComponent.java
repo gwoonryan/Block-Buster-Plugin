@@ -9,7 +9,7 @@ import java.util.List;
 public record MeleeWeaponComponent(
         double damage,
         double attackSpeed
-) implements net.gwoonryan.blockbuster.game.item.api.components.ItemComponent, net.gwoonryan.blockbuster.game.item.api.components.LoreComponent {
+) implements ItemComponent, LoreComponent {
 
     @Override
     public LoreSection loreSection() {

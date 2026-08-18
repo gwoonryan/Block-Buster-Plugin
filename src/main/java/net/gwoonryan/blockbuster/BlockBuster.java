@@ -9,12 +9,14 @@ import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitRunnable;
 
+import java.util.Random;
 import java.util.logging.Logger;
 
 public final class BlockBuster extends JavaPlugin {
 
     public static Logger logger;
     private static BlockBuster instance;
+    public static Random rnd;
 
     public static String server_name_abbreviation = "BB";
 
@@ -23,6 +25,7 @@ public final class BlockBuster extends JavaPlugin {
         // Plugin startup logic
         logger = getLogger();
         instance = this;
+        rnd = new Random();
         getLogger().info("Starting BlockBuster");
         PlayerManager.init();
         ItemManager.init();

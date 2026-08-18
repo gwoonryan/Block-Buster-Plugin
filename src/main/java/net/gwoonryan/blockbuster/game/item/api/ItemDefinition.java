@@ -21,8 +21,8 @@ public final class ItemDefinition {
     public ItemDefinition(NamespacedKey id, Material material, String displayName, List<ItemComponent> components) {
         this.id = id;
         this.material = material;
-        this.components = components;
         this.displayName = displayName;
+        this.components = components;
     }
 
     public <T extends ItemComponent> Optional<T> firstComponentOfType(Class<T> type) {
